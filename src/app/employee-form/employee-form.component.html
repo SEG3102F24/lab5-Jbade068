@@ -1,0 +1,19 @@
+<form (ngSubmit)="submitEmployeeForm()" (keydown.enter)="submitEmployeeForm()" #employeeForm="ngForm">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="employee.name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="employee.email" name="email" required>
+  </div>
+
+  <div>
+    <label for="position">Position</label>
+    <input type="text" id="position" [(ngModel)]="employee.position" name="position" required>
+  </div>
+
+  <!-- Handle Enter key as well -->
+  <button type="submit" [disabled]="employeeForm.invalid">Submit</button>
+</form>
